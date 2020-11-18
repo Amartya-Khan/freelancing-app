@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "474519013593",
+    "firebase_url": "https://freelance-app-9f53b.firebaseio.com",
+    "project_id": "freelance-app-9f53b",
+    "storage_bucket": "freelance-app-9f53b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474519013593:android:df6d7236001d5611e656c8",
+        "android_client_info": {
+          "package_name": "com.amartya.freelancing_platform"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474519013593-0em5o7jc8i8n569h416ot51ivb3unls3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amartya.freelancing_platform",
+            "certificate_hash": "39906a007d4fb2681aaa78cb560d2cc4edcdc561"
+          }
+        },
+        {
+          "client_id": "474519013593-tg0p4qu8oobej4d5qa0v7jtl5udd7lu1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAK8c-H_6qxvm8-yRPlFb2aQVKKPRXpzMs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474519013593-tg0p4qu8oobej4d5qa0v7jtl5udd7lu1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
