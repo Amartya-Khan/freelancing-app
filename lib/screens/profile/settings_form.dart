@@ -5,7 +5,6 @@ import 'package:freelancing_platform/models/user.dart';
 import 'package:freelancing_platform/services/database.dart';
 import 'package:freelancing_platform/shared/constants.dart';
 import 'package:freelancing_platform/widgets/loading.dart';
-
 import 'package:provider/provider.dart';
 
 class SettingsForm extends StatefulWidget {
@@ -105,17 +104,15 @@ class _SettingsFormState extends State<SettingsForm> {
                                     _currentName ?? userData.name,
                                     _currentGender ?? userData.gender,
                                     _currentAge ?? userData.age,
-                                    userData.priorTreatment,
-                                    userData.depression,
-                                    userData.sleepDisorders,
-                                    userData.bladderProblems,
-                                    userData.constipation,
-                                    userData.bloodPressureDrop,
-                                    userData.smellDysfunction,
-                                    userData.fatigue,
-                                    userData.localisedPain,
-                                    userData.bodyPain,
-                                    userData.sexualDysfunction);
+                                    userData.game,
+                                    userData.imageEditing,
+                                    userData.onlineAds,
+                                    userData.photography,
+                                    userData.programming,
+                                    userData.sm,
+                                    userData.video,
+                                    userData.writing,
+                                    );
                             Navigator.pop(context);
                           }
                           print(_currentName);

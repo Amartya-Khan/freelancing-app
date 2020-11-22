@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:freelancing_platform/models/personal.dart';
 import 'package:freelancing_platform/models/user.dart';
 import 'package:freelancing_platform/screens/profile/prior_diagnosis.dart';
+import 'package:freelancing_platform/screens/profile/profile_header.dart';
 import 'package:freelancing_platform/screens/profile/settings_form.dart';
 import 'package:freelancing_platform/screens/profile/symptoms_form.dart';
 import 'package:freelancing_platform/services/auth.dart';
@@ -24,6 +25,7 @@ class _Profile extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<User>(context);
+    final size = MediaQuery.of(context).size;
     void _showSettingsPanel() {
       showModalBottomSheet(
           context: context,
@@ -70,22 +72,28 @@ class _Profile extends State<Profile> {
     return StreamProvider<List<Personal>>.value(
         value: DatabaseService().personalData,
         child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.deepPurpleAccent,
-            title: Text(
-              "Profile",
-              style: textStyle.copyWith(fontSize: 17),
-            ),
-            actions: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(right: 20),
-                child: GestureDetector(
-                  child: Tooltip(
-                      child: Icon(Icons.exit_to_app), message: "Logout"),
-                  onTap: () => _auth.signOut(),
-                ),
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(80),
+                      child: AppBar(
+              
+              backgroundColor: Colors.deepPurpleAccent,
+              elevation: 0,
+              centerTitle: true,
+              title: Text(
+                "Profile",
+                style: textStyle.copyWith(fontSize: 25),
               ),
-            ],
+              actions: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(right: 20),
+                  child: GestureDetector(
+                    child: Tooltip(
+                        child: Icon(Icons.exit_to_app), message: "Logout"),
+                    onTap: () => _auth.signOut(),
+                  ),
+                ),
+              ],
+            ),
           ),
           body: StreamBuilder<UserData>(
               stream: DatabaseService(uid: user.uid).userData,
@@ -95,31 +103,18 @@ class _Profile extends State<Profile> {
 
                   return ListView(
                     children: [
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Center(
-                          child: Text(
-                        'Initial data is placeholder',
-                        style: textStyle.copyWith(color: Colors.black),
-                      )),
-                      Center(
-                          child: Text(
-                        'Editing that saves your data to our database',
-                        style: textStyle.copyWith(
-                            color: Colors.black, fontSize: 12.5),
-                      )),
-                       SizedBox(
-                        height: 25,
-                      ),
-                      Divider(),
+                      ProfileHeader(size: size),
+                      
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal:10.0),
+                        padding: EdgeInsets.symmetric(horizontal: 10.0),
                         child: Row(
                           children: [
                             Text(
                               'Personal details',
-                              style: textStyle.copyWith(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w600),
+                              style: textStyle.copyWith(
+                                  color: Colors.black,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600),
                             ),
                             Spacer(),
                             Text("Edit"),
@@ -138,20 +133,26 @@ class _Profile extends State<Profile> {
                         ),
                       ),
                       Container(
-                        
                         // color: Colors.grey[200],
-                      
-                       
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Text('Name: ${userData.name}', style: textStyle.copyWith(color: Colors.black),),
-                              Text('Gender: ${userData.gender}', style: textStyle.copyWith(color: Colors.black),),
-                              Text('Age: ${userData.age}', style: textStyle.copyWith(color: Colors.black),)
-                            ],
-                          ),
+
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'Name: ${userData.name}',
+                              style: textStyle.copyWith(color: Colors.black),
+                            ),
+                            Text(
+                              'Gender: ${userData.gender}',
+                              style: textStyle.copyWith(color: Colors.black),
+                            ),
+                            Text(
+                              'Age: ${userData.age}',
+                              style: textStyle.copyWith(color: Colors.black),
+                            )
+                          ],
                         ),
-                      
+                      ),
                       SizedBox(
                         height: 20,
                       ),
@@ -161,8 +162,11 @@ class _Profile extends State<Profile> {
                         child: Row(
                           children: [
                             Text(
-                              'Symptoms Noticed',
-                              style: textStyle.copyWith(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w600),
+                              'Your Interests',
+                              style: textStyle.copyWith(
+                                  color: Colors.black,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600),
                             ),
                             Spacer(),
                             Text("Reset & Edit"),
@@ -180,22 +184,27 @@ class _Profile extends State<Profile> {
                           ],
                         ),
                       ),
-                      
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         // crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
+                         
+                          SizedBox(height: 8),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             // crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SymptomContainer(
-                                currentState: userData.bladderProblems,
-                                symptom: 'Bladder Problems',
+                                currentState: userData.game,
+                                symptom: 'gaming',
                               ),
                               SymptomContainer(
-                                currentState: userData.bloodPressureDrop,
-                                symptom: 'Drop in Blood Pressure',
+                                currentState: userData.imageEditing,
+                                symptom: 'Image Editing',
+                              ),
+                              SymptomContainer(
+                                currentState: userData.onlineAds,
+                                symptom: 'Online ads',
                               ),
                             ],
                           ),
@@ -205,16 +214,16 @@ class _Profile extends State<Profile> {
                             // crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SymptomContainer(
-                                currentState: userData.bodyPain,
-                                symptom: 'Body Ache',
+                                currentState: userData.photography,
+                                symptom: 'Photography',
                               ),
                               SymptomContainer(
-                                currentState: userData.constipation,
-                                symptom: 'Constipation',
+                                currentState: userData.programming,
+                                symptom: 'Programming',
                               ),
                               SymptomContainer(
-                                currentState: userData.depression,
-                                symptom: 'Depression',
+                                currentState: userData.sm,
+                                symptom: 'Social Media',
                               ),
                             ],
                           ),
@@ -224,38 +233,20 @@ class _Profile extends State<Profile> {
                             // crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SymptomContainer(
-                                currentState: userData.fatigue,
-                                symptom: 'Fatigue',
+                                currentState: userData.video,
+                                symptom: 'Videography',
                               ),
                               SymptomContainer(
-                                currentState: userData.localisedPain,
-                                symptom: 'Localised Pain',
-                              ),
-                              SymptomContainer(
-                                currentState: userData.sexualDysfunction,
-                                symptom: 'Sexual Dysfunction',
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 8),
-                          
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            // crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SymptomContainer(
-                                currentState: userData.sleepDisorders,
-                                symptom: 'Sleep Disorders',
-                              ),
-                              SymptomContainer(
-                                currentState: userData.smellDysfunction,
-                                symptom: 'Smell Dysfunction',
+                                currentState: userData.writing,
+                                symptom: 'Writing',
                               ),
                             ],
                           ),
                         ],
                       ),
-                      SizedBox(height: 25,),
+                      SizedBox(
+                        height: 25,
+                      ),
                       Divider(),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -266,20 +257,22 @@ class _Profile extends State<Profile> {
                               children: [
                                 Text(
                                   'Any prior PD',
-                                  style: textStyle.copyWith(color: Colors.black, fontSize: 17, fontWeight: FontWeight.w600),
+                                  style: textStyle.copyWith(
+                                      color: Colors.black,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600),
                                 ),
                                 Text(
                                   'diagnosis/treatment?',
-                                  style: textStyle.copyWith(color: Colors.black, fontSize: 17, fontWeight: FontWeight.w600),
+                                  style: textStyle.copyWith(
+                                      color: Colors.black,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600),
                                 ),
                               ],
                             ),
                             Spacer(),
-                            SymptomContainer(
-                              currentState: userData.priorTreatment,
-                              symptom: userData.priorTreatment ? 'Yes' : "No",
-                            ),
-                            Spacer(),
+          
                             Text('Reset & Edit'),
                             IconButton(
                               iconSize: 30,

@@ -83,17 +83,16 @@ class _PriorPDState extends State<PriorPD> {
                                   userData.name,
                                   userData.gender,
                                   userData.age,
-                                  _currentpriorTreatment,
-                                  userData.depression,
-                                  userData.sleepDisorders,
-                                  userData.bladderProblems,
-                                  userData.constipation,
-                                  userData.bloodPressureDrop,
-                                  userData.smellDysfunction,
-                                  userData.fatigue,
-                                  userData.localisedPain,
-                                  userData.bodyPain,
-                                  userData.sexualDysfunction);
+                                  userData.game,
+                                  userData.imageEditing,
+                                  userData.onlineAds,
+                                  userData.photography,
+                                  userData.programming,
+                                  userData.sm,
+                                  userData.video,
+                                  userData.writing,
+                                  
+                                  );
                           Navigator.pop(context);
                         },
                         child: Text(

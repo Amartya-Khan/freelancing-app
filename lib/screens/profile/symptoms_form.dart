@@ -15,18 +15,14 @@ class _SymptomsFormState extends State<SymptomsForm> {
   final List<String> genders = ['Male', 'Female', 'Other'];
 
   //form values
-  bool _currentpriorTreatment = false;
-  bool _currentdepression = false;
-  bool _currentsleepDisorders = false;
-  bool _currentbladderProblems = false;
-  bool _currentconstipation = false;
-  bool _currentbloodPressureDrop = false;
-  bool _currentsmellDysfunction = false;
-  bool _currentfatigue = false;
-  bool _currentlocalisedPain = false;
-  bool _currentbodyPain = false;
-  bool _currentsexualDysfunction = false;
-
+  bool _currentPhotography = false;
+  bool _currentProgram = false;
+  bool _currentImageEdit = false;
+  bool _currentOnlineAds = false;
+  bool _currentGame = false;
+  bool _currentWrite = false;
+  bool _currentSM = false;
+  bool _currentVideo = false;
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<User>(context);
@@ -59,19 +55,19 @@ class _SymptomsFormState extends State<SymptomsForm> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18.0),
                           ),
-                          color: (_currentbladderProblems)
+                          color: (_currentGame)
                               ? Colors.deepPurpleAccent
                               : Colors.grey,
                           textColor:  Colors.white,
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             setState(() {
-                              _currentbladderProblems =
-                                  !_currentbladderProblems;
+                              _currentGame =
+                                  !_currentGame;
                             });
                           },
                           child: Text(
-                            "Bladder Problems",
+                            "Game assets",
                             style: TextStyle(
                               fontSize: 14.0,
                             ),
@@ -83,7 +79,7 @@ class _SymptomsFormState extends State<SymptomsForm> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18.0),
                           ),
-                          color: (_currentconstipation)
+                          color: (_currentImageEdit)
                               ? Colors.deepPurpleAccent
                               : Colors.grey,
                           textColor: 
@@ -91,11 +87,11 @@ class _SymptomsFormState extends State<SymptomsForm> {
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             setState(() {
-                              _currentconstipation = !_currentconstipation;
+                              _currentImageEdit = !_currentImageEdit;
                             });
                           },
                           child: Text(
-                            "Constipation",
+                            "Image Editing",
                             style: TextStyle(
                               fontSize: 14.0,
                             ),
@@ -113,7 +109,7 @@ class _SymptomsFormState extends State<SymptomsForm> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18.0),
                           ),
-                          color: (_currentbodyPain)
+                          color: (_currentOnlineAds)
                               ? Colors.deepPurpleAccent
                               : Colors.grey,
                           textColor:
@@ -121,11 +117,11 @@ class _SymptomsFormState extends State<SymptomsForm> {
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             setState(() {
-                              _currentbodyPain = !_currentbodyPain;
+                              _currentOnlineAds = !_currentOnlineAds;
                             });
                           },
                           child: Text(
-                            "Body Ache",
+                            "Online ads",
                             style: TextStyle(
                               fontSize: 14.0,
                             ),
@@ -137,19 +133,19 @@ class _SymptomsFormState extends State<SymptomsForm> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18.0),
                           ),
-                          color: (_currentbloodPressureDrop)
+                          color: (_currentPhotography)
                               ? Colors.deepPurpleAccent
                               : Colors.grey,
                           textColor:  Colors.white,
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             setState(() {
-                              _currentbloodPressureDrop =
-                                  !_currentbloodPressureDrop;
+                              _currentPhotography =
+                                  !_currentPhotography;
                             });
                           },
                           child: Text(
-                            "Drop in Blood pressure",
+                            "Photography",
                             style: TextStyle(
                               fontSize: 14.0,
                             ),
@@ -167,18 +163,18 @@ class _SymptomsFormState extends State<SymptomsForm> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18.0),
                           ),
-                          color: (_currentdepression)
+                          color: (_currentProgram)
                               ? Colors.deepPurpleAccent
                               : Colors.grey,
                           textColor:  Colors.white,
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             setState(() {
-                              _currentdepression = !_currentdepression;
+                              _currentProgram = !_currentProgram;
                             });
                           },
                           child: Text(
-                            "Depression",
+                            "Programming",
                             style: TextStyle(
                               fontSize: 14.0,
                             ),
@@ -190,18 +186,18 @@ class _SymptomsFormState extends State<SymptomsForm> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18.0),
                           ),
-                          color: (_currentlocalisedPain)
+                          color: (_currentSM)
                               ? Colors.deepPurpleAccent
                               : Colors.grey,
                           textColor:  Colors.white,
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             setState(() {
-                              _currentlocalisedPain = !_currentlocalisedPain;
+                              _currentSM = !_currentSM;
                             });
                           },
                           child: Text(
-                            "Localised pain",
+                            "Social Media content",
                             style: TextStyle(
                               fontSize: 14.0,
                             ),
@@ -219,18 +215,18 @@ class _SymptomsFormState extends State<SymptomsForm> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18.0),
                           ),
-                          color: (_currentfatigue)
+                          color: (_currentVideo)
                               ? Colors.deepPurpleAccent
                               : Colors.grey,
                           textColor: Colors.white,
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             setState(() {
-                              _currentfatigue = !_currentfatigue;
+                              _currentVideo = !_currentVideo;
                             });
                           },
                           child: Text(
-                            "Fatigue",
+                            "Videography",
                             style: TextStyle(
                               fontSize: 14.0,
                             ),
@@ -242,7 +238,7 @@ class _SymptomsFormState extends State<SymptomsForm> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18.0),
                           ),
-                          color: (_currentsexualDysfunction)
+                          color: (_currentWrite)
                               ? Colors.deepPurpleAccent
                               : Colors.grey,
                           textColor: 
@@ -250,12 +246,12 @@ class _SymptomsFormState extends State<SymptomsForm> {
                           padding: EdgeInsets.all(8.0),
                           onPressed: () {
                             setState(() {
-                              _currentsexualDysfunction =
-                                  !_currentsexualDysfunction;
+                              _currentWrite =
+                                  !_currentWrite;
                             });
                           },
                           child: Text(
-                            "Sexual Dysfunction",
+                            "Writing",
                             style: TextStyle(
                               fontSize: 14.0,
                             ),
@@ -264,59 +260,7 @@ class _SymptomsFormState extends State<SymptomsForm> {
                       ),
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    // crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        child: FlatButton(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                          ),
-                          color: (_currentsleepDisorders)
-                              ? Colors.deepPurpleAccent
-                              : Colors.grey,
-                          textColor:  Colors.white,
-                          padding: EdgeInsets.all(8.0),
-                          onPressed: () {
-                            setState(() {
-                              _currentsleepDisorders = !_currentsleepDisorders;
-                            });
-                          },
-                          child: Text(
-                            "Sleeping disorder",
-                            style: TextStyle(
-                              fontSize: 14.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        child: FlatButton(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                          ),
-                          color: (_currentsmellDysfunction)
-                              ? Colors.deepPurpleAccent
-                              : Colors.grey,
-                          textColor:  Colors.white,
-                          padding: EdgeInsets.all(8.0),
-                          onPressed: () {
-                            setState(() {
-                              _currentsmellDysfunction =
-                                  !_currentsmellDysfunction;
-                            });
-                          },
-                          child: Text(
-                            "Smell dysfunction",
-                            style: TextStyle(
-                              fontSize: 14.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  
                   Center(
                     child: Container(
                       child: FlatButton(
@@ -332,17 +276,15 @@ class _SymptomsFormState extends State<SymptomsForm> {
                                   userData.name,
                                   userData.gender,
                                   userData.age,
-                                  _currentpriorTreatment,
-                                  _currentdepression,
-                                  _currentsleepDisorders,
-                                  _currentbladderProblems,
-                                  _currentconstipation,
-                                  _currentbloodPressureDrop,
-                                  _currentsmellDysfunction,
-                                  _currentfatigue,
-                                  _currentlocalisedPain,
-                                  _currentbodyPain,
-                                  _currentsexualDysfunction);
+                                  _currentGame,
+                                  _currentImageEdit,
+                                  _currentOnlineAds,
+                                  _currentPhotography,
+                                  _currentProgram,
+                                  _currentSM,
+                                  _currentVideo,
+                                  _currentWrite,
+                                  );
                           Navigator.pop(context);
                         },
                         child: Text(

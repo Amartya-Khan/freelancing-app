@@ -24,7 +24,7 @@ class AuthService {
       User user = result.user;
       // await addPhoneNumber(user, phoneNumber);
       await DatabaseService(uid: user.uid)
-          .updatePersonalData("new name", "Male", 50, false, false, false, false, false, false, false,false, false, false, false);
+          .updatePersonalData("new name", "Male", 20, false, false, false, false, false, false, false,false);
 
           return _userFromFirebaseUser(user);
     } catch (e) {

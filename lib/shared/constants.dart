@@ -16,7 +16,7 @@ const textInputDecoration = InputDecoration(
 var textStyle = GoogleFonts.montserrat(
     textStyle: TextStyle(color: Colors.white, fontSize: 15));
 
-RoundedRectangleBorder circularButton=  RoundedRectangleBorder(
+RoundedRectangleBorder circularButton = RoundedRectangleBorder(
   borderRadius: BorderRadius.circular(10),
 );
 
@@ -29,3 +29,4 @@ Color darkGrey = Color(0xffDDE1E2);
 Color lightGrey = Color(0xffF8F8F8);
 Color bg = Color(0xffFAFAFA);
 
+const double kDefaultPadding = 20.0;

@@ -11,23 +11,27 @@ class DatabaseService {
   final CollectionReference personalDataCollection =
       FirebaseFirestore.instance.collection('personalData');
 
-  Future<void> updatePersonalData(String name, String gender, int age, bool priorTreatment, bool depression, bool sleepDisorders, bool bladderProblems, bool constipation, bool bloodPressureDrop, bool smellDysfunction, bool fatigue, bool localisedPain, bool bodyPain, bool sexualDysfunction   ) async {
+  Future<void> updatePersonalData(String name, String gender, int age,   final bool photography,
+  final bool programming,
+  final bool imageEditing,
+  final bool onlineAds,
+  final bool game,
+  final bool writing,
+  final bool sm,
+  final bool video,   ) async {
 //we're searching for the document based on uid
     return await personalDataCollection.doc(uid).set({
       'name': name,
       'gender': gender,
       'age': age,
-      'priorTreatment': priorTreatment,
-      'depression': depression,
-      'sleepDisorders': sleepDisorders,
-      'bladderProblems': bladderProblems,
-  'constipation': constipation,
-   'bloodPressureDrop': bloodPressureDrop,
-  'smellDysfunction': smellDysfunction,
-  'fatigue': fatigue,
-  'localisedPain': localisedPain,
-  'bodyPain': bodyPain,
-  'sexualDysfunction': sexualDysfunction,
+       'photography': photography,
+  'programming':programming,
+   "imageEditing": imageEditing,
+  'onlineAds': onlineAds,
+  'game': game,
+  'writing': writing,
+  'sm': sm,
+   'video': video,
     });
   }
 
@@ -38,17 +42,14 @@ class DatabaseService {
         name: e.data()['name'] ?? '',
         gender: e.data()['gender'] ?? '',
         age: e.data()['age'] ?? 0,
-        bladderProblems: e.data()['bladderProblems'] ?? false,
-        bloodPressureDrop: e.data()['bloodPressureDrop'] ?? false,
-        bodyPain: e.data()['bodyPain'] ?? false,
-        constipation: e.data()['constipation'] ?? false,
-        depression: e.data()['depression'] ?? false,
-        fatigue: e.data()['fatigue'] ?? false,
-        localisedPain: e.data()['localisedPain'] ?? false,
-        priorTreatment: e.data()['priorTreatment'] ?? false,
-        sexualDysfunction: e.data()['sexualDysfunction'] ?? false,
-        sleepDisorders: e.data()['sleepDisorders'] ?? false,
-        smellDysfunction: e.data()['smellDysfunction'] ?? false,
+        game: e.data()['game'] ?? false,
+        imageEditing:  e.data()['imageEditing'] ?? false,
+        onlineAds:  e.data()['onlineAds'] ?? false,
+        photography:  e.data()['photography'] ?? false,
+        programming:  e.data()['programming'] ?? false,
+        sm:  e.data()['sm'] ?? false,
+        video: e.data()['video'] ?? false,
+        writing: e.data()['writing'] ?? false,
 
         
         
@@ -63,17 +64,14 @@ class DatabaseService {
       name: snapshot.data()['name'],
       gender: snapshot.data()['gender'],
       age: snapshot.data()['age'],
-      bladderProblems: snapshot.data()['bladderProblems'],
-      bloodPressureDrop: snapshot.data()['bloodPressureDrop'],
-      bodyPain: snapshot.data()['bodyPain'],
-      constipation: snapshot.data()['constipation'],
-      depression: snapshot.data()['depression'],
-      fatigue: snapshot.data()['fatigue'],
-      localisedPain: snapshot.data()['localisedPain'],
-      priorTreatment: snapshot.data()['priorTreatment'],
-      sexualDysfunction: snapshot.data()['sexualDysfunction'],
-      sleepDisorders: snapshot.data()['sleepDisorders'],
-      smellDysfunction: snapshot.data()['smellDysfunction'] 
+      game:  snapshot.data()['game'],
+      imageEditing: snapshot.data()['imageEditing'],
+      onlineAds:  snapshot.data()['onlineAds'],
+      photography:  snapshot.data()['photography'],
+      programming: snapshot.data()['programming'],
+      sm:  snapshot.data()['sm'],
+      video: snapshot.data()['video'],
+      writing: snapshot.data()['writing'],
     );
   }
 
