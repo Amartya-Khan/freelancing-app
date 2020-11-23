@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:freelancing_platform/screens/search/interests.dart';
 import 'package:freelancing_platform/screens/search/search.dart';
 import 'package:freelancing_platform/services/auth.dart';
 import 'package:freelancing_platform/shared/constants.dart';
@@ -50,7 +51,7 @@ class _ExploreState extends State<Explore> {
           body:  TabBarView(
               children: [
                Search(),
-                Icon(Icons.directions_transit),
+                Interests(),
               
               ],
             ), ),

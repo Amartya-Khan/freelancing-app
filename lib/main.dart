@@ -26,6 +26,7 @@ class _MyAppState extends State<MyApp> {
     return StreamProvider<User>.value(
       value: AuthService().user,
       child: MaterialApp(
+        theme: ThemeData(primaryColor: Colors.deepPurpleAccent),
         title: "",
         debugShowCheckedModeBanner: false,
         home: Wrapper(),
