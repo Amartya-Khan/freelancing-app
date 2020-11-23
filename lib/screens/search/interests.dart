@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:freelancing_platform/screens/search/grid_tile.dart';
+import 'package:freelancing_platform/screens/search/interest_tile.dart';
 import 'package:freelancing_platform/services/auth.dart';
 import 'package:freelancing_platform/shared/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,6 +23,7 @@ class _InterestsState extends State<Interests> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     final photoSvg = 'assets/icons/photography.svg';
+    final gameSvg = 'assets/icons/gaming.svg';
     return Scaffold(
         backgroundColor: bg,
         body: ListView(
@@ -48,68 +50,68 @@ class _InterestsState extends State<Interests> {
                 ],
               ),
             ),
-            SizedBox(
-              height: 10,
-            ),
+            InterestTile(
+                height: height,
+                width: width,
+                service: 'Product Photography',
+                seller: 'Walter White',
+                imageSrc: 'assets/interests/product_photo.jpg',
+                rating: 4.5,
+                price: 440),
+            InterestTile(
+                height: height,
+                width: width,
+                service: 'Product Photography',
+                seller: 'Walter White',
+                imageSrc: 'assets/interests/product_photo.jpg',
+                rating: 4.5,
+                price: 440),
+            InterestTile(
+                height: height,
+                width: width,
+                service: 'Product Photography',
+                seller: 'Walter White',
+                imageSrc: 'assets/interests/product_photo.jpg',
+                rating: 4.5,
+                price: 440),
             Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Row(children: <Widget>[
-                Container(
-                  height: height * 0.155,
-                  width: 110,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage('assets/interests/product_photo.jpg'),
-                      )),
-                ),
-                Stack(
-                  // clipBehavior: Clip.none,
-                  // overflow: Overflow.visible,
-                  children: <Widget>[
-                    Container(
-                      color: Colors.blue,
-                      height: height * 0.155,
-                      width: width * 0.6,
-                    ),
-                    Positioned(
-                      child: Container(
-                        color: Colors.red,
-                        height: height * 0.05,
-                        width: width * 0.1,
+              padding: EdgeInsets.all(20.0),
+              child: Row(
+                children: <Widget>[
+                  SvgPicture.asset(
+                    gameSvg,
+                    height: 30,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Text(
+                      'Game resources',
+                      style: textStyle.copyWith(
+                        color: Colors.black,
+                        fontSize: 20,
+                        // fontWeight: FontWeight.w600
                       ),
                     ),
-                    Positioned(
-                      top: height*0.155-( height * 0.05),
-                      child: Container(
-                        color: Colors.yellow,
-                        height: height * 0.05,
-                        width: width * 0.1,
-                      ),
-                    ),
-                    Positioned(
-                      //  top: 50,
-                      left: width * 0.6 - (height * 0.05),
-                      child: Container(
-                        color: Colors.green,
-                        height: height * 0.05,
-                        width: width * 0.1,
-                      ),
-                    ),
-                    Positioned(
-                      top: height*0.155-( height * 0.05),
-                      left: width * 0.6 - (height * 0.05),
-                      child: Container(
-                        color: Colors.yellow,
-                        height: height * 0.05,
-                        width: width * 0.1,
-                      ),),
-                  ],
-                )
-
-]),
+                  ),
+                ],
+              ),
             ),
+            InterestTile(
+                height: height,
+                width: width,
+                service: 'Product Photography',
+                seller: 'Walter White',
+                imageSrc: 'assets/interests/product_photo.jpg',
+                rating: 4.5,
+                price: 440),
+            InterestTile(
+                height: height,
+                width: width,
+                service: 'Product Photography',
+                seller: 'Walter White',
+                imageSrc: 'assets/interests/product_photo.jpg',
+                rating: 4.5,
+                price: 440),
           ],
         ));
   }
