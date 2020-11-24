@@ -50,7 +50,10 @@ class _ParentHomeState extends State<ParentHome> {
               Explore(),
               Profile(),
             ]),
-        bottomNavigationBar: SafeArea(
+        bottomNavigationBar:
+        
+         SafeArea(
+           
           child: Container(
             // margin: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
             decoration: BoxDecoration(color: Colors.white,
@@ -66,6 +69,8 @@ class _ParentHomeState extends State<ParentHome> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
               child: GNav(
+                // backgroundColor: bg,
+                
                 
                 curve: Curves.easeInOut,
                 // duration: Duration(milliseconds: 500),
@@ -73,34 +78,35 @@ class _ParentHomeState extends State<ParentHome> {
                   GButton(
                     gap: gap,
                     icon: Icons.home_outlined,
-                    iconColor: Colors.black,
-                    iconActiveColor: Colors.deepPurpleAccent,
+                    iconColor: Colors.deepPurpleAccent,
+                    iconActiveColor: Colors.white,
+                    textColor: Colors.white,
+                    backgroundColor: Colors.deepPurpleAccent,
                     text: 'Home',
                     // textStyle: GoogleFonts.montserrat(),
-                    textColor: Colors.deepPurpleAccent,
-                    backgroundColor: darkGrey.withAlpha(150),
                     iconSize: 24,
                     padding: padding,
                   ),
                   GButton(
                     gap: gap,
-                    icon: Icons.search,
-                    iconColor: Colors.black,
-                    iconActiveColor: Colors.deepPurpleAccent,
-                    text: 'search',
-                    textColor: Colors.deepPurpleAccent,
-                    backgroundColor:darkGrey.withAlpha(150),
+                    icon: Icons.explore,
+                   iconColor: Colors.deepPurpleAccent,
+                    iconActiveColor: Colors.white,
+                    textColor: Colors.white,
+                    backgroundColor: Colors.deepPurpleAccent,
+                    text: 'Explore',
+                  
                     iconSize: 24,
                     padding: padding,
                   ),
                   GButton(
                     gap: gap,
                     icon: Icons.person_outline,
-                    iconColor: Colors.black,
-                    iconActiveColor: Colors.deepPurpleAccent,
+                    iconColor: Colors.deepPurpleAccent,
+                    iconActiveColor: Colors.white,
+                    textColor: Colors.white,
+                    backgroundColor: Colors.deepPurpleAccent,
                     text: 'Profile',
-                    textColor: Colors.deepPurpleAccent,
-                    backgroundColor: darkGrey.withAlpha(150),
                     iconSize: 24,
                     padding: padding,
                   ),

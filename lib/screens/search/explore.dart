@@ -3,6 +3,7 @@ import 'package:freelancing_platform/screens/search/interests.dart';
 import 'package:freelancing_platform/screens/search/search.dart';
 import 'package:freelancing_platform/services/auth.dart';
 import 'package:freelancing_platform/shared/constants.dart';
+import 'package:freelancing_platform/widgets/notification_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -31,21 +32,16 @@ class _ExploreState extends State<Explore> {
               style: GoogleFonts.montserrat(),
             ),
              bottom: TabBar(
+               indicatorColor: Colors.white,
+               labelStyle: montserrat,
               unselectedLabelStyle: TextStyle(),
                 tabs: [
-                  Tab(text: "All categories",),
+                  Tab(text: "All categories", ),
                   Tab(text: "Your interests"),
                 ],
               ),
             actions: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(right: 20),
-                child: GestureDetector(
-                  child:
-                      Tooltip(child: Icon(Icons.exit_to_app), message: "Logout"),
-                  onTap: () => _auth.signOut(),
-                ),
-              ),
+              NotificationButton()
             ],
           ),
           body:  TabBarView(

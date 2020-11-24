@@ -87,7 +87,8 @@ class _Profile extends State<Profile> {
                 Padding(
                   padding: EdgeInsets.only(right: 20),
                   child: GestureDetector(
-                    child: Tooltip(
+                    child: 
+                    Tooltip(
                         child: Icon(Icons.exit_to_app), message: "Logout"),
                     onTap: () => _auth.signOut(),
                   ),
@@ -248,46 +249,29 @@ class _Profile extends State<Profile> {
                         height: 25,
                       ),
                       Divider(),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Any prior PD',
-                                  style: textStyle.copyWith(
-                                      color: Colors.black,
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.w600),
-                                ),
-                                Text(
-                                  'diagnosis/treatment?',
-                                  style: textStyle.copyWith(
-                                      color: Colors.black,
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.w600),
-                                ),
-                              ],
-                            ),
-                            Spacer(),
-          
-                            Text('Reset & Edit'),
-                            IconButton(
-                              iconSize: 30,
-                              icon: Icon(
-                                Icons.settings,
-                                // color: Colors.white,
-                              ),
-                              color: Colors.deepPurpleAccent,
-                              onPressed: () {
-                                _showPriorPD();
-                              },
-                            ),
-                          ],
-                        ),
-                      ),
+                      SizedBox(
+              height: size.height * 0.01,
+            ),
+            Center(
+              child: RaisedButton(
+                onPressed: () {
+                  
+                },
+                color: Colors.deepPurpleAccent,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25)),
+                child: Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'View your job postings',
+                    style: montserrat,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: size.height * 0.04,
+            ),
                     ],
                   );
                 } else {

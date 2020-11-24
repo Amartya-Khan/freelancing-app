@@ -28,35 +28,35 @@ class _SearchState extends State<Search> {
             crossAxisCount: 2,
             children: <Widget>[
               GridTileIcon(
-                svg: SvgPicture.asset('assets/icons/photography.svg'),
+                svg: SvgPicture.asset('assets/icons/photography.svg', color: Colors.deepPurpleAccent,),
                 categoryName: 'Photography',
               ),
               GridTileIcon(
-                svg: SvgPicture.asset('assets/icons/coding.svg'),
+                svg: SvgPicture.asset('assets/icons/coding.svg', color: Colors.deepPurpleAccent,),
                 categoryName: 'Programming',
               ),
               GridTileIcon(
-                svg: SvgPicture.asset('assets/icons/edit_image.svg'),
+                svg: SvgPicture.asset('assets/icons/edit_image.svg', color: Colors.deepPurpleAccent,),
                 categoryName: 'Image Editing',
               ),
               GridTileIcon(
-                svg: SvgPicture.asset('assets/icons/online_ads.svg'),
+                svg: SvgPicture.asset('assets/icons/online_ads.svg', color: Colors.deepPurpleAccent,),
                 categoryName: 'Online Advertisement',
               ),
               GridTileIcon(
-                svg: SvgPicture.asset('assets/icons/gaming.svg'),
+                svg: SvgPicture.asset('assets/icons/gaming.svg', color: Colors.deepPurpleAccent,),
                 categoryName: 'Game assets & graphics',
               ),
               GridTileIcon(
-                svg: SvgPicture.asset('assets/icons/write.svg'),
+                svg: SvgPicture.asset('assets/icons/write.svg', color: Colors.deepPurpleAccent,),
                 categoryName: 'Writing',
               ),
               GridTileIcon(
-                svg: SvgPicture.asset('assets/icons/sm-1.svg'),
+                svg: SvgPicture.asset('assets/icons/sm-1.svg', color: Colors.deepPurpleAccent,),
                 categoryName: 'Social Media Content',
               ),
               GridTileIcon(
-                svg: SvgPicture.asset('assets/icons/video.svg'),
+                svg: SvgPicture.asset('assets/icons/video.svg', color: Colors.deepPurpleAccent,),
                 categoryName: 'Videography',
               ),
             ]));

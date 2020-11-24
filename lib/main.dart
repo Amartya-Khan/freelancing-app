@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:freelancing_platform/screens/freelancer/freelance_profile_pick.dart';
+import 'package:freelancing_platform/screens/notifications/notification_page.dart';
 import 'package:freelancing_platform/services/auth.dart';
 import 'package:freelancing_platform/wrapper.dart';
 import 'package:provider/provider.dart';
@@ -31,7 +33,8 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         home: Wrapper(),
         routes: {
-          
+          NotificationPage.id: (context)=> NotificationPage(),
+          FreelancerProfilePick.id: (context)=> FreelancerProfilePick(),
         },
       ),
     );
